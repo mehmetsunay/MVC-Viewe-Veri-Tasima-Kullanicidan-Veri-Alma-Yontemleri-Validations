@@ -1,0 +1,113 @@
+﻿
+
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+
+
+<div class="text-center">
+    <h1 class="display-4">BU BİR URL.ACTİON ÖRNEĞİDİR</h1>
+    <a href="@Url.Action("GetProducts","Product")">Tıkla ve Nereye Geçiş Yapıyor İncele</a>
+</div>
+
+
+
+
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+    <div class="text-center">
+
+    </div>
+
+</body>
+
+</html>
+
+
+@*RAZOR TEKNOLOJİSİ*@
+
+@*MİCROSOFT TARAFINDAN GELİŞTİRİLMİŞ HTML İÇERİSİNDE CSHARP KULLANABİLMEMİ SAĞLAYAN TEKNOLOJİDİR.*@
+
+@*Değişken Oluş,Okuma & HTML Kullanımı & Tek Satırlık İşlemler *@
+@*Sayısal İşlemler & Koşul Yapıları ve Döngüler*@
+
+@*....................ÖRNEK...................................*@
+
+@{
+    string ifade = "BUGÜN HAVA ÇOK GÜZEL";
+
+}
+
+<h3>
+    @ifade
+</h3>
+
+@*....................ÖRNEK...................................*@
+
+@{
+
+    int number = 13;
+
+}
+
+@if (number == 13)
+{
+
+    <h3>
+
+        AFERİM SANA BE ! DOĞRU BİLDİN ! BAŞIN GÖĞE ERDİ Mİ ?
+    </h3>
+
+}
+else
+{
+
+    <h3>
+
+        ÜZÜLME KARDEŞİM GÜN OLUR DEVRAN DÖNER
+    </h3>
+
+
+}
+
+@*......................ÖRNEK.................................*@
+
+@{
+    int b = 8;
+    Console.WriteLine(b);
+
+}
+
+
+@*URL HELPERS -- HTML HELPERS -- TAG HELPERS **@
+
+@*URL HELPERS --> Adından anlaşılacağı gibi URL İşlemlerinde bizlere yardımcı olur.(Link Oluşumu vb) **@
+@*URL HELPERS --> Metotlar(Action,ActionLink,Content,RouteURL)--Propertyler(ActionContext) **@
+
+
+
+@*.........................ÖRNEK..KULLANIMLAR.......................*@
+
+@*@Url.Action("GetProducts","Product")->ÖRNEĞİ YUKARDA *@
+@*@Url.ActionLink("GetProducts","Product",new{id=5})*@
+@*@Url.Content("~/site.css")*@
+@*Url.ActionContext;*@
+
+
+@*HTML HELPERS --> Yardımcı Metodlar Barındırır,cshtml dosyalarının render edilmesini sağar **@
+@*HTML HELPERS --> Contexe Dair Bilgiler Verir,Veri Taşıma Kontrollerine Erişim Sağlar **@
+
+@*HTML HELPERS --> Metotlar(Html.Partial,Html.RenderPartial,Html.ActionLink,Html Form Met.) **@
+@*HTML HELPERS --> Properties(ViewContext,TempData,ViewData,ViewBag)*@
+
+

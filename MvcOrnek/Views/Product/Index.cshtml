@@ -1,0 +1,48 @@
+﻿@*@model List<MvcOrnek.Models.Product>*@
+
+
+
+<h3>VİEWBAG</h3>
+<ul>
+
+    @*dinamik olarak verimi taşıdım-viewbag*@
+
+    @foreach (var product in ViewBag.products as List<MvcOrnek.Models.Product>)
+    {
+        <li>
+
+            @product.ProductName
+
+           
+
+        </li>
+
+    }
+
+
+</ul>
+
+
+<h3>VİEWDATA</h3>
+<ul>
+
+    @*object olarak geldı ve ben unboxıng yaptım as kullanarak*@
+
+    @foreach (var product in ViewData["products"] as List<MvcOrnek.Models.Product>)
+    {
+        <li>
+
+            @product.ProductName
+
+        </li>
+
+    }
+
+
+</ul>
+
+
+
+
+
+

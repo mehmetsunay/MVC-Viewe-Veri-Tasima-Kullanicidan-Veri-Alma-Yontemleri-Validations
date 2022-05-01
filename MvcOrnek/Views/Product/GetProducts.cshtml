@@ -1,0 +1,103 @@
+﻿
+@using MvcOrnek.Extensions
+
+@addTagHelper* ,Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+
+
+
+@*
+
+    @model MvcOrnek.Models.ViewModels.CustomerProduct
+
+    <!--model türü getirirken Model Fiziki olarak çekme işlemi yapar-->
+
+    <h3>@Model.Product.ProductName</h3>
+    <h3>@Model.Customer.Name</h3>
+
+
+*@
+
+@{
+    ViewData["Title"] = "GetProducts";
+}
+
+<h1>GetProducts</h1>
+
+
+@Html.Partial("~/Views/Product/Partials/ListPartial.cshtml")
+
+@*
+
+        @{Html.RenderPartial("~/Views/Product/Partials/ListPartial.cshtml")}
+         @{Html.Action("AnaSayfa","Index","Home")} --> Anasayfa yazacak home'un ındexıne gıdecek
+
+    .....................................................................................
+         HTML FORM METODLARI
+
+    KULLANICIYLA ETKİLEŞİME GİRMEMİZİ SAĞLAYAN FORM
+    VE İNPUT NESNELER OLUŞTURMAMIZI SAĞLAYAN METOTLARDIR
+
+        @Html.BeginForm()
+        @Html.CheckBox("cb")
+        @Html.TextBox("txt")-->47.satırda ornek calısması mevcuttur
+        @Html.ValidationMessage("vldt")
+
+         <form -action="/product/getproducts" method="post">
+
+           <input id="txt" name="txt" type="text" value>
+            ....
+          </form>
+
+*@
+
+
+@Html.TextBox("txtName", null, new { style = "background-color:blue; color:white;" })
+
+
+
+@Html.CustomTextBox("txtCustomName", null, "Your Name:")
+
+
+
+
+@*..........................TAG HELPERS.....................................................*@
+
+@*
+    HTML HELPERLARIN YERİNE GELEN YENİ YAPILANDIRMALARDIR.İÇERİSİNDE BİR KÜTÜPHANE BARINDIRIRLAR
+
+*@
+
+<form asp-action="Index" asp-controller="Product" method="post">
+
+    <input type="text" />
+
+    <select>
+        <option value="value">SEÇENEK</option>
+    </select>
+
+</form>
+
+@*
+
+
+    CACHE TAGHELPER
+    <cache>
+        Cache: @DateTime.Now
+    </cache>
+
+        @DateTime.Now
+
+
+*@
+
+@*
+
+
+    PARTİAL TAGHELPER
+
+    <partial name="~/Views/Product/Partials/ListPartial.cshtml/">
+
+
+*@
